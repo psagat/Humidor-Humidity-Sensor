@@ -1,7 +1,6 @@
 # Humidor Humidity Sensor
 
-Humidity Sensor that takes readings every 30 seconds and posts the data to an influxdb server to charting. In the event it can't connect
-to the network, get a successful reading from the DHT22 sensor, or connect to your influxdb server, the red LED will turn on. If no LED is lit then all is well.
+This project builds a humidity sensor that will take readings every 30 seconds and post the data to an influxdb server for charting. In the event it can't connect to the network, get a successful reading from the DHT22 sensor, or connect to your influxdb server, the red LED will turn on. If no LED is lit then all is well.
 
 
 <a href="http://imgur.com/EKuIALh"><img src="http://i.imgur.com/EKuIALh.png" title="source: imgur.com" /></a>
@@ -9,7 +8,9 @@ to the network, get a successful reading from the DHT22 sensor, or connect to yo
 ## Getting Started
 
 These instructions will provide you with the breadboard schematic, the sketch, and the changes within the sketch you will need to make.
-It will NOT go into configuring grafana or influxdb as there are plenty instructions found with a simple google search.
+It will NOT go into configuring grafana or influxdb as there are plenty instructions found with a simple google search. It also assumes you have a working IDE for your NodeMCU ESP8266. Instructions on how to configure your ESP can be located here:
+
+http://www.instructables.com/id/Quick-Start-to-Nodemcu-ESP8266-on-Arduino-IDE/
 
 ### Prerequisites
 
@@ -20,11 +21,11 @@ You will need the following environement setup:
 
 2.Influxdb
 
-3. Arduino IDE (DHT,ESP8266WiFi, and WiFiClient libraries)
+3.Arduino IDE (DHT,ESP8266WiFi, and WiFiClient libraries)
 
 #### Hardware:
 
-1.nodemcu ESP8266 Dev board
+1.Nodemcu ESP8266 Dev board
 
 2.DHT22 Temp and Humidity Sensor
 
@@ -87,7 +88,7 @@ Your graph should look like this:
 
 ## Authors
 
-* **Pete Sagat** - *Initial work* - [psagat](https://github.com/psagat)
+* **Pete Sagat** - [psagat](https://github.com/psagat)
 
 ## License
 
