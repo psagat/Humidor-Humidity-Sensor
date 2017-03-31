@@ -1,6 +1,7 @@
 # Humidor Humidity Sensor
 
-Humidity Sensor that takes readings every 30 seconds and posts the data to an influxdb server to charting.
+Humidity Sensor that takes readings every 30 seconds and posts the data to an influxdb server to charting. In the event it can't connect
+to the network, get a successful reading from the DHT22 sensor, or connect to your influxdb server, the red LED will turn on. If no LED is lit then all is well.
 
 
 <a href="http://imgur.com/EKuIALh"><img src="http://i.imgur.com/EKuIALh.png" title="source: imgur.com" /></a>
@@ -32,7 +33,7 @@ You will need the following environement setup:
 
 ### Configure Sketch
 
-Download These changes need to be made to the sketch based on your own environment.
+Download HumditySensor-test-http.ino and open with Arduino. These changes need to be made to the sketch based on your own environment.
 
 #### Configure network information
 
@@ -63,6 +64,8 @@ const char* host = "x.x.x.x"; ------ IP address of your influxdb server
   String body= "Humidity,location=Humidor value=" + String(h); <------ You can change the name and the location of the dataset
 ```
 
+Upload the sketch to your esp8266
+
 When configured correctly you should see the following output in your console (ctrl-shift-M)
 
 <a href="http://imgur.com/db3Rcvc"><img src="http://i.imgur.com/db3Rcvc.png" title="source: imgur.com" /></a>
@@ -75,56 +78,19 @@ Your graph should look like this:
 
 "Humidity" and "Location" can be change to whatever you want when you configure the HTTP Post section of the sketch.
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+* [Arduino](https://www.arduino.cc//) - Arduino IDE
+* [Grafana](https://grafana.com/) - Graphing and analytics 
+* [Influxdb](https://www.influxdata.com/open-source/#influxdb/) - Time series database
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Pete Sagat** - *Initial work* - [psagat](https://github.com/psagat)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the GNU General Public License
 
-## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
